@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>အခမဲ့ Translation App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        select {
+            padding: 5px;
+            margin: 0 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-radius: 5px;
+            font-family: 'Padauk', sans-serif; /* မြန်မာစာဖောင့် */
+        }
+    </style>
+    <!-- မြန်မာစာဖောင့်အတွက် -->
+    <link href="https://fonts.googleapis.com/css2?family=Padauk&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>AXIN Translator</h1>
+        
+        <div class="input-group">
+            <textarea id="sourceText" placeholder="စာသားရိုက်ထည့်ပါ"></textarea>
+        </div>
+
+        <div class="input-group">
+            <label>ဘာသာစကား:</label>
+            <select id="sourceLang">
+                <option value="auto">အလိုအလျောက်</option>
+                <option value="en">အင်္ဂလိပ်</option>
+                <option value="my">မြန်မာ</option>
+                <option value="es">စပိန်</option>
+                <option value="fr">ပြင်သစ်</option>
+                <option value="de">ဂျာမန်</option>
+                <option value="zh-CN">တရုတ်</option>
+            </select>
+
+            <label>ပြန်ဆိုမည့်ဘာသာ:</label>
+            <select id="targetLang">
+                <option value="en">အင်္ဂလိပ်</option>
+                <option value="my">မြန်မာ</option>
+                <option value="es">စပိန်</option>
+                <option value="fr">ပြင်သစ်</option>
+                <option value="de">ဂျာမန်</option>
+                <option value="zh-CN">တရုတ်</option>
+            </select>
+
+            <button onclick="translateText()">ဘာသာပြန်မည်</button>
+        </div>
+
+        <div class="result" id="result"></div>
+        <button onclick="copyResult()">ပြန်ဆိုချက်ကို ကူးယူမည်</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
